@@ -1,0 +1,61 @@
+body {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  background: url(img/BG-image-gym.jpg);
+}
+
+.left {
+  display: inline;
+  border: 2px solid red;
+  position: absolute;
+  left: 34px;
+  top: 20px;
+}
+
+.left div {
+  text-align: center;
+}
+
+.left img {
+  width: 5em;
+  filter: invert(100%);
+}
+
+.mid {
+  display: block;
+  border: 2px solid green;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.right {
+  position: absolute;
+  right: 34px;
+  top: 20px;
+  display: inline-block;
+  border: 2px solid yellow;
+}
+
+.navbar {
+  display: inline-block;
+}
+
+.navbar li {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  padding: 34px 23px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+  color: grey;
+  text-decoration: underline;
+  padding: 34px 23px;
+}
