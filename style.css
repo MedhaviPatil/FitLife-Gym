@@ -1,85 +1,274 @@
+:root {
+  --primary-color: #dc030a;
+  --primary-color-dark: rgb(135, 6, 12);
+  --text-dark: #0a0a0a;
+  --text-light: #737373;
+  --extra-light: #e5e5e5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Oswald", san-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 8rem 1rem;
+}
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.section__description {
+  color: var(--text-light);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  /* font-weight: 400;
   font-style: normal;
   color: white;
   margin: 0px;
   padding: 0px;
-  background: url(img/BG-image-gym.jpg);
+  background-color: #101010; */
 }
 
-.left {
-  display: inline;
-  position: absolute;
-  left: 34px;
-  top: 20px;
-  /* border: 2px solid red; */
+nav {
+  background-color: var(--text-dark);
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  /* max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; */
 }
 
-.left div {
+.nav__bar {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  /* list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 22px; */
+}
+
+.nav__header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+}
+
+.nav__logo p {
   text-align: center;
-  font-size: 14px;
+  font-size: 0.68rem;
+  color: var(--white);
 }
 
-.left img {
-  width: 5em;
-  filter: invert(100%);
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
 }
 
-.mid {
-  display: block;
-  width: 55%;
-  margin: 29px auto;
-  /* border: 2px solid green; */
-}
-
-.right {
+.nav__links {
   position: absolute;
-  right: 34px;
-  top: 42px;
-  display: inline-block;
-  /* border: 2px solid yellow; */
+  top: 68px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
 }
 
-.navbar {
-  display: inline-block;
+.nav__links.open {
+  transform: translateY(0);
 }
 
-.navbar li {
-  display: inline-block;
-  color: white;
-  font-size: 25px;
+.nav__links a {
+  font-size: 1.1rem;
+  font-family: var(--header-font);
+  white-space: nowrap;
+  color: var(--white);
+  transition: 0.3s;
 }
 
-.navbar li a {
-  color: white;
-  text-decoration: none;
-  padding: 34px 23px;
+/* .nav__links a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+} */
+
+.nav__links a:hover {
+  color: var(--primary-color);
 }
 
 .navbar li a:hover,
 .navbar li a.active {
-  color: grey;
-  text-decoration: underline;
-  padding: 34px 23px;
+  position: relative;
+  color: gray;
+}
+
+@media (width> 768px) {
+  nav {
+    position: static;
+    padding: 1.5rem 1rem;
+  }
+
+  .nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    transform: none;
+    z-index: 1;
+  }
+
+  .header__contianer {
+    padding-block: 12rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__content {
+    grid-column: 2/3;
+  }
+}
+
+.header {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(img/BG-image-gym.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header__contianer {
+  padding-block: 10rem;
+  display: grid;
+}
+
+.header__content h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  line-height: 5rem;
+  color: var(--primary-color);
+}
+
+.header__content h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  line-height: var(--white);
+  color: var(--white);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--extra-light);
 }
 
 .btn {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0px 9px;
-  background-color: black;
-  color: white;
-  padding: 4px 14px;
-  border: 2px solid grey;
-  border-radius: 10px;
-  font-size: 20px;
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  color: var(--white);
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  border: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn:hover {
-  background-color: rgb(39, 38, 38);
+img {
+  display: flex;
+  /* width: 100%; */
+  width: 3.5rem;
+  filter: invert(100%);
+}
+
+.btn_primary {
+  background-color: var(--primary-color);
+}
+
+.btn__primary:hover {
+  background-color: var(--primary-color-dark);
+  /* border-color: 1px solid var(--primary-color ); */
+}
+
+.btn__secondary {
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.btn__secondary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* .btn:hover {
+  background-color: var(--primary-color-dark);
+} */
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .container {
