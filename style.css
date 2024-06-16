@@ -116,6 +116,17 @@ nav {
   color: gray;
 }
 
+.about__container{
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, .66), 
+  rgba(0,0,0, .6)), 
+  url(img/About_banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 .about__header{
   text-align: center;
   display: grid;
@@ -124,11 +135,13 @@ nav {
 
 .about__header .section__header{
   font-size: 3rem;
+  color: var(--white);
 }
 
 .about__header .section__description{
-  max-width: 350px;
+  max-width: 450px;
   margin-inline: auto;
+  color: var(--extra-light);
 }
 
 .about__grid{
@@ -145,7 +158,7 @@ nav {
   font-size: 1.2rem;
   font-weight: 600;
   font-family: var(--header-font);
-  color: var(--text-dark)
+  color: var(--white)
 }
 
 .about__card h4::before{
@@ -154,7 +167,7 @@ nav {
   left: 0;
   font-size: 6rem;
   line-height: 6rem;
-  color: var(--text-dark);
+  color: var(--white);
   opacity: 0.1;
   z-index: -1;
 }
@@ -172,7 +185,7 @@ nav {
 }
 
 .about__card p{
-  color: var(--text-light);
+  color: var(--extra-light);
 }
 
 .trainer__grid{
@@ -228,12 +241,94 @@ nav {
   color: var(--text-light)
 }
 
+.membership{
+  background-image: linear-gradient(rgba(0, 0, 0, .66), 
+  rgba(0,0,0, .6)),
+  url(img/Membership__banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.membership__container .section__header {
+  color: var(--white);
+}
+
+.membership__grid{
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.membership__card{
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+.membership__card:hover{
+  background-color: var(--primary-color);
+}
+
+.membership__card h4{
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.membership__card ul{
+  margin-bottom: 1rem;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.membership__card li{
+  display: flex;
+  gap: 10px;
+  color: var(--white);
+}
+
+.membership__card li span{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: .3s;
+}
+
+.membership__card:hover li span {
+  color: var(--white);
+}
+
+.membership__card h3{
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.membership__card h3 :is(sup, span){
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.membership__card:hover .btn{
+  background-color: var(--text-dark);
+}
+
 @media(width > 540px){
   .about__grid{
     grid-template-columns: repeat(2, 1fr);
   }
 
   .trainer__grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .membership__grid{
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -269,30 +364,6 @@ nav {
     transform: none;
     z-index: 1;
   }
-
-  /* .header__container {
-    padding-block: 10rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .header__content {
-    grid-column: 2/3;
-  } */
-
-  .about__header{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .about__header .section__header{
-    text-align: right;
-  }
-
-  .about__header .section__description{
-    text-align: start;
-    margin-inline-start: unset;
-  }
   
   .about__grid{
     grid-template-columns: repeat(3, 1fr);
@@ -300,13 +371,24 @@ nav {
 
   .trainer__grid{
     grid-template-columns: repeat(4, 1fr);
+  }
 
+  .membership__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (width > 1024px){
   .trainer__grid{
     gap: 2rem;
+  }
+
+  .membership__grid {
+    gap: 2rem;
+  }
+
+  .membership__card {
+    padding: 2rem;
   }
 }
 
